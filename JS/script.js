@@ -24,13 +24,93 @@ const getPasswordCriteria = () => {
   let includedPasswordValues = [];
 
   //Declare string values for different types of characters
-  const lowerCaseValues = ["a", "b", "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r"];
+  const lowerCaseValues = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
 
-  const upperCaseValues = ["A", "B", "C"];
+  const upperCaseValues = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+  ];
 
-  const specialCharacterValues = ["/", "*", "+"];
+  const specialCharacterValues = [
+    "!",
+    "#",
+    "$",
+    "%",
+    "&",
+    "*",
+    "+",
+    ",",
+    "-",
+    ".",
+    "/",
+    ":",
+    ";",
+    "<",
+    "=",
+    ">",
+    "?",
+    "@",
+    "[",
+    "]",
+    "_",
+    "`",
+    "{",
+    "|",
+    "}",
+  ];
 
-  const numberValues = ["1", "2", "3"];
+  const numberValues = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
   //Use confirms to find out which characters are wanted
   const useLowerCase = confirm("Would you like lower case characters?");
