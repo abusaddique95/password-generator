@@ -24,72 +24,78 @@ const getPasswordCriteria = () => {
   let includedPasswordValues = [];
 
   //Declare string values for different types of characters
-  const lowerCaseValues = "abcdefghijklmnopqrstuvwxyz";
+  const lowerCaseValues = ["a", "b", "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r"];
 
-  const upperCaseValues = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const upperCaseValues = ["A", "B", "C"];
 
-  const specialCharacterValues = "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+  const specialCharacterValues = ["/", "*", "+"];
 
-  const numberValues = "0123456789";
+  const numberValues = ["1", "2", "3"];
 
   //Use confirms to find out which characters are wanted
   const useLowerCase = confirm("Would you like lower case characters?");
 
   if (useLowerCase) {
-    includedPasswordValues.push(lowerCaseValues);
+    //includedPasswordValues.push(lowerCaseValues);
+    includedPasswordValues = includedPasswordValues.concat(lowerCaseValues);
   }
 
   const useUpperCase = confirm("Would you like upper case characters?");
 
   if (useUpperCase) {
-    includedPasswordValues.push(upperCaseValues);
+    //includedPasswordValues.push(upperCaseValues);
+    includedPasswordValues = includedPasswordValues.concat(upperCaseValues);
   }
 
   const useSpecials = confirm("Would you like Special characters?");
 
   if (useSpecials) {
-    includedPasswordValues.push(specialCharacterValues);
+    //includedPasswordValues.push(specialCharacterValues);
+    includedPasswordValues = includedPasswordValues.concat(
+      specialCharacterValues
+    );
   }
 
   const useNumbers = confirm("Would you like numbers?");
 
   if (useNumbers) {
-    includedPasswordValues.push(numberValues);
+    //includedPasswordValues.push(numberValues);
+    includedPasswordValues = includedPasswordValues.concat(numberValues);
   }
 
-  console.log(includedPasswordValues);
+  console.log("abcd: " + includedPasswordValues);
   //Return the array with the strings of characters requested
   return includedPasswordValues;
 };
 
-const createRandomPassword = (length, criteria) => {
-  console.log(length, criteria);
+const createRandomPassword = (passwordLength, criteria) => {
+  console.log(passwordLength, criteria);
   let password = "";
 
   //for loop will be used to loop over the criteria array of strings and add one character from each to pw
-  for (let i = 0; i < criteria.length; i++) {
+  for (let i = 0; i < passwordLength; i++) {
     console.log("index being checked in for loop: ", i);
     let characters = criteria[i];
     console.log("Characters:", characters);
 
     //Use Math.floor to round down to lowest integer
     //Use Math.Random to get a random number between 0 and 1
-    let randomNumber = Math.floor(Math.random() * characters.length);
+    let randomNumber = Math.floor(Math.random() * criteria.length);
     console.log("Random index to add to pw:", randomNumber);
 
     //Use the random number generated above to add a random character to the password string
-    password += characters[randomNumber];
+    password += criteria[randomNumber];
     console.log(password);
   }
 
   const allCharacters = criteria.join();
   console.log("All:", allCharacters);
 
-  let i = 0;
-  while (i < length) {
-    console.log(i);
-    i += 1;
-  }
+  //   let i = 0;
+  //   while (i < length) {
+  //     console.log(i);
+  //     i += 1;
+  //   }
 
   //Use a while loop -
 
