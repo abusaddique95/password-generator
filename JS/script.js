@@ -14,7 +14,9 @@ const getPasswordLength = () => {
 
   // Same as above but for less than 128
 
-  return length;
+  if (length >= 8 && length <= 128) {
+    return length;
+  } else alert("please enter valid password");
 };
 
 const getPasswordCriteria = () => {
@@ -60,8 +62,39 @@ const getPasswordCriteria = () => {
   return includedPasswordValues;
 };
 
-const createRandomPassword = () => {
-  return "kdUE284(@d0";
+const createRandomPassword = (length, criteria) => {
+  console.log(length, criteria);
+  let password = "";
+
+  //for loop will be used to loop over the criteria array of strings and add one character from each to pw
+  for (let i = 0; i < criteria.length; i++) {
+    console.log("index being checked in for loop: ", i);
+    let characters = criteria[i];
+    console.log("Characters:", characters);
+
+    //Use Math.floor to round down to lowest integer
+    //Use Math.Random to get a random number between 0 and 1
+    let randomNumber = Math.floor(Math.random() * characters.length);
+    console.log("Random index to add to pw:", randomNumber);
+
+    //Use the random number generated above to add a random character to the password string
+    password += characters[randomNumber];
+    console.log(password);
+  }
+
+  const allCharacters = criteria.join();
+  console.log("All:", allCharacters);
+
+  let i = 0;
+  while (i < length) {
+    console.log(i);
+    i += 1;
+  }
+
+  //Use a while loop -
+
+  console.log("Final password after loop:", password);
+  return password;
 };
 
 // main function to generate the random password
