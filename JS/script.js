@@ -171,14 +171,6 @@ const createRandomPassword = (passwordLength, criteria) => {
   const allCharacters = criteria.join();
   console.log("All:", allCharacters);
 
-  //   let i = 0;
-  //   while (i < length) {
-  //     console.log(i);
-  //     i += 1;
-  //   }
-
-  //Use a while loop -
-
   console.log("Final password after loop:", password);
   return password;
 };
